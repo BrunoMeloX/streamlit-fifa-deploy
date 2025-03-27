@@ -3,19 +3,13 @@ import webbrowser
 import pandas as pd
 import datetime as dt
 
-
-import os
-for subdir, dirs, files in os.walk('./'):
-    for file in files:
-      print(file)
-      
 st.set_page_config(
     layout='wide',
     page_title='Home'
 )
 
 if 'data' not in st.session_state:
-    df_data = pd.read_csv('datasets/CLEAN_FIFA23_official_data.csv', index_col=0)
+    df_data = pd.read_csv('./datasets/CLEAN_FIFA23_official_data.csv', index_col=0)
     df_data = df_data[df_data['Contract Valid Until'] >= dt.datetime.today().year]
     df_data = df_data[df_data['Value(£)'] > 0]
     df_data = df_data.sort_values(by='Overall', ascending=False)
