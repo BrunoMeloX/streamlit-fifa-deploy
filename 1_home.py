@@ -3,6 +3,12 @@ import webbrowser
 import pandas as pd
 import datetime as dt
 
+
+import os
+for subdir, dirs, files in os.walk('./'):
+    for file in files:
+      print(file)
+      
 st.set_page_config(
     layout='wide',
     page_title='Home'
