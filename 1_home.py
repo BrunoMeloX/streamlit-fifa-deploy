@@ -1,5 +1,4 @@
 import streamlit as st
-import webbrowser
 import pandas as pd
 import datetime as dt
 
@@ -17,11 +16,7 @@ if 'data' not in st.session_state:
 
 st.markdown('# FIFA 2023 OFICIAL DATASET')
 st.sidebar.markdown('Desenvolvido por Bruno Melo [LinkedIn](link)')
-
-btn = st.button('Acesse os dados do Kaggle')
-
-if btn:
-    webbrowser.open('www.youtube.com', new=2)
+st.link_button('Acesse os dados do Kaggle', 'www.youtube.com')
 
 st.markdown(
     """
